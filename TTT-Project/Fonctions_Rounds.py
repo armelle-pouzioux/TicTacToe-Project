@@ -1,3 +1,7 @@
+from Fonctions_Display import Reset_board, Display_board
+from Fichier_main import board
+
+
 def TRY_coor(input):
     #try si l'input de coordonnée correspond à une case vide, au quel cas le
     # tour se termine

@@ -1,3 +1,5 @@
+from Fonctions_Display import Display_rules, Choose_symbol, Reset_board, Display_board
+from Fonctions_Rounds import Launch_round, TRY_coor, Check_win
 
 board = [coordinates for coordinates in range(1,10)]
     #cette liste à répéter à chaque début de manche définit / réinitialise la
@@ -20,14 +22,7 @@ SYMBOL_J2 = ''
 SCORE_J1 = ''
 SCORE_J2 = ''
 
-
-
-
-
-
-
-
-
+    # CODE MAIN
     #compile et initie l'intégralité des algorythmes composant le jeu,
     # permettant la délimitation de manches
 Display_rules(input("Bienvenue au tic-tac-toe ! Voulez-vous visualiser les\

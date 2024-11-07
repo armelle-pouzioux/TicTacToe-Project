@@ -1,3 +1,7 @@
+
+from Fichier_main import symbol, players, board
+
+
 def Display_rules(y_n):
     #affiche ou non les règles du jeu, l'assignation des symboles et le
     # système de manches
