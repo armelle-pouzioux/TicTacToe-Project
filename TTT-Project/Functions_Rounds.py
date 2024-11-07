@@ -57,7 +57,7 @@ def Launch_match():
       # manche, permettant d'arrêter celle-ci lorsque les 9 tours sont écoulés
 
     Reset_board()
-    while TURN <=9 :
+    while TURN <9 :
         TURN +=1
         print(f"           MATCH {MATCH[0]}, Tour {TURN}")
         Display_board()
@@ -82,4 +82,4 @@ def Launch_match():
                     return f"\n{players[1]} Joueur 2 gagne !! Félicitations !!! {players[1]}"
                 else: return f"\n{players[1]} Joueur 2 gagne !! {players[1]}"
     MATCH[0] +=1
-    return f"Dommage, il faudra rejouer pour trouver un vainqueur !"
+    return f"\nDommage, il faudra rejouer pour trouver un vainqueur !\n"
