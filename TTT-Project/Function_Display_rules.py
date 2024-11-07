@@ -10,9 +10,12 @@ def Display_rules(y_n):
         print("-"*13)
         print(f"| 7 | 8 | 9 |" )
         print()
-        print("Voici les règles")
+        print("Chaque joueur choisi son symbole pour la partie.\
+              A tour de rôle les joueurs vont placer leur symbole dans la grille de jeu.\
+              Le premier à aligner ses trois symboles, horizontalement, verticalement, ou diagonalement, gagne la partie.\
+              Si aucun joueur n'aligne ses symboles, c'est match nul et nous t'invitons à rejouer !")
         print()
         return
     else :
-        print()
+        print("Bonne chance !")
         return
