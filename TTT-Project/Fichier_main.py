@@ -1,6 +1,4 @@
-board = [coordinates for coordinates in range(1,10)]
-    #cette liste à répéter à chaque début de manche définit / réinitialise la
-    # grille, générant 9 "coordinates" vierges
+
 
 TURN = 0
     #cette variable compte le nombre de tours écoulés depuis le début de la
