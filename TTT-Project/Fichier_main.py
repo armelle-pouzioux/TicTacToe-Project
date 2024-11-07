@@ -1,9 +1,4 @@
 
-
-TURN = 0
-    #cette variable compte le nombre de tours écoulés depuis le début de la
-    # manche, permettant d'arrêter celle-ci lorsque les 9 tours sont écoulés
-
 SYMBOL_J1 = ''
 SYMBOL_J2 = ''
 SCORE_J1 = ''
