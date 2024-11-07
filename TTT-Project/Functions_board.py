@@ -1,5 +1,7 @@
+board = [coordinates for coordinates in range(1,10)]
+    #cette liste à répéter à chaque début de manche définit / réinitialise la
+    # grille, générant 9 "coordinates" vierges
 
-from Fichier_main import board
 def Reset_board():
     board[0:9] = [' ' for coordinates in range(1,10)]
 
