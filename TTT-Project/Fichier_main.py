@@ -1,6 +1,3 @@
-from Fonctions_Display import Display_rules, Choose_symbol, Reset_board, Display_board
-from Fonctions_Rounds import Launch_round, TRY_coor, Check_win
-
 board = [coordinates for coordinates in range(1,10)]
     #cette liste à répéter à chaque début de manche définit / réinitialise la
     # grille, générant 9 "coordinates" vierges
@@ -22,6 +19,9 @@ SYMBOL_J2 = ''
 SCORE_J1 = ''
 SCORE_J2 = ''
 
+
+from Function-Display_rules import Display_rules
+
     # CODE MAIN
     #compile et initie l'intégralité des algorythmes composant le jeu,
     # permettant la délimitation de manches
@@ -30,6 +30,9 @@ Display_rules(input("Bienvenue au tic-tac-toe ! Voulez-vous visualiser les\
 print("Le premier joueur choisit le symbole qui le représentera pendant la\
  manche,")
 print("Ce symbole doit être désigné à partir de la liste qui suit :")
+
+from Function-Choose import Choose_symbol
+
 Choose_symbol(0)
 print("Le deuxième joueur choisit également son symbole conformément à la\
  liste")
@@ -38,7 +41,10 @@ print("Le joueur 1 jouera donc avec le symbole :", players[0],\
  "et le joueur 2 :", players[1])
 SYMBOL_J1 = players[0]
 SYMBOL_J2 = players[1]
-Launch_round()
+
+#from Fonctions_Rounds import Launch_turn, TRY_coor, Check_win
+#from Fonctions_Display import Reset_board, Display_board
+#Launch_turn()
 
 
 
