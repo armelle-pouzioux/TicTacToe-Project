@@ -1,4 +1,4 @@
-from Function_Display_rules import board
+from Lists_Board_Players_MATCH import board
 def Check_win(Symbole):
     #vérifier si le dernier placement de symbole permet de compléter une
     # combinaison victorieuse pour le joueur
