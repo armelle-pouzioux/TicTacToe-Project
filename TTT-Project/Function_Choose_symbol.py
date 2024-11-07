@@ -7,12 +7,12 @@ players = ['','']
 def Choose_symbol(player):
     #définit avec un input le choix de symbole réalisé par le joueur puis
     # supprime celui-ci de la liste disponible
+    print(symbol)
+    for x in range(1, symbol.index(symbol[-1])+2):
+        print("   ", end='')
+        print(x, ",", sep='', end='')
+    print()
     while True:
-        print(symbol)
-        for x in range(1, symbol.index(symbol[-1])+2):
-            print("   ", end='')
-            print(x, ",", sep='', end='')
-        print()
         choice = input("Faites votre choix avec le numéro correspondant : ")
         try:
             choice = int(choice)
