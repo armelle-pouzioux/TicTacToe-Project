@@ -50,7 +50,7 @@ def TRY_win(player):
 def Launch_match():
     #cette fonction constitue la boucle de jeu enchaînant les tours des deux
     # joueurs jusqu'à atteindre soit une victoire soit un match nul
-    from Functions_board import Reset_board, Display_board
+    from Functions_Display import Reset_board, Display_board
     from Lists_Board_Players_MATCH import players, MATCH, SCORES
     TURN = 0
       #cette variable compte le nombre de tours écoulés depuis le début de la
