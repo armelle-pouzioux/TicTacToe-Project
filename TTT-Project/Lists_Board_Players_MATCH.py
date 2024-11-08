@@ -1,3 +1,7 @@
+symbol = ['x','o','&','#','★','♥']
+    #cette liste établit les différents symboles pouvant être utilisés pour
+    # représenter le jeu de chaque joueur
+
 board = [' ' for coordinates in range(1,10)]
     #cette liste à répéter à chaque début de manche définit / réinitialise la
     # grille, générant 9 "coordinates" vierges
