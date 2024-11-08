@@ -12,6 +12,6 @@ players = ['','']
 
 SCORES = [0,0]
 MATCH = [1]
-TURN = [0]
-# cette variable compte le nombre de tours écoulés depuis le début de la
-# manche, permettant d'arrêter celle-ci lorsque les 9 tours sont écoulés
+TURN = [1]
+# ces listes à la valeur unique gèrent les comptes nécessaires aux fonctions
+# propres au jeu
