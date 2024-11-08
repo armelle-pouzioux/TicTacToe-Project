@@ -31,9 +31,9 @@ print("\nLe joueur 1 jouera donc avec le symbole :", players[0],\
 # Début des manches ! : import de la fonction des matchs dans une boucle
 #      infinie permettant de relancer la fonction en gardant un compte des
 #      scores pour chaque joueur, et sans répéter le préambule
+from Functions_Launch import Launch_match
+from Functions_Display import Display_scores
 while True:
-    from Functions_Rounds import Launch_match
-    from Functions_Display import Display_scores
     print(f"\n  Début du {Display_scores()}\n")
     print(Launch_match())
 
