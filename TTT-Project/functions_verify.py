@@ -1,7 +1,7 @@
-def TRY_coor(player):
+def verify_coordinate(player):
     # try l'input du joueur jusqu'à qu'iel inscrive un nombre entier,
     # contenu entre 1 et 10 et dont l'équivalent dans la grille est libre
-    from Fichier_Lists import board, players
+    from lists_established import board, players
     while True:
         coordinates = input(f"Joueur {players[player]},\
  quelle case souhaitez-vous jouer ? (1 à 9)\n  ")
@@ -29,10 +29,10 @@ def TRY_coor(player):
             continue
         
 
-def TRY_win(player):
+def verify_win_cases(player):
     # vérifier si le dernier placement de symbole permet de compléter une
     # combinaison victorieuse pour le joueur
-    from Fichier_Lists import board, players
+    from lists_established import board, players
     
     # combinaisons horizontales
     if all(players[player] in board[x] for x in (0,3,6)) or\

@@ -1,45 +1,48 @@
 
-def Launch_turn(player):
-    from Fichier_Lists import SCORES, MATCH
-    from Functions_Display import Display_board
-    from Functions_TRY import TRY_coor, TRY_win
+def launch_turn(player):
+    # launches the verifying of current player's coordinate of choice
+    # to update the board list accurately then launches the verifying of
+    # all winning combinations
+    from lists_established import scores, match
+    from functions_display import display_board
+    from functions_verify import verify_coordinate, verify_win_cases
 
-    TRY_coor(player)
-    if TRY_win(player) == True:
-        Display_board()
-        SCORES[player] +=1
-        MATCH[0] +=1
+    verify_coordinate(player)
+    if verify_win_cases(player) == True:
+        display_board()
+        scores[player] +=1
+        match[0] +=1
         return True
 
-def Launch_match():
-    # cette fonction constitue la boucle de jeu enchaînant les tours des deux
-    # joueurs jusqu'à atteindre soit une victoire soit un match nul
-    from Functions_Display import Reset_board, Display_board
-    from Fichier_Lists import players, MATCH, TURN
+def launch_match():
+    # regroup all match-related functions to create a functionning round
+    # with inputs, formatted prints 
+    from functions_display import reset_board, display_board
+    from lists_established import players, match, turn
     import time
 
-    Reset_board()
-    TURN[0] = 1
-    while TURN[0] <=9 :
+    reset_board()
+    turn[0] = 1
+    while turn[0] <=9 :
         time.sleep(1)
-        print(f"{' '*10} MATCH {MATCH[0]}, Tour {TURN[0]}")
-        TURN[0] +=1
-        Display_board()
+        print(f"{' '*10} MATCH {match[0]}, Tour {turn[0]}")
+        turn[0] +=1
+        display_board()
         time.sleep(0.5)
-        if TURN[0] %2!= 0:
-            if Launch_turn(0) == True:
+        if turn[0] %2!= 0:
+            if launch_turn(0) == True:
                 time.sleep(1)
                 return f"{players[0]} Joueur 1 gagne !! Félicitations !!!\
  {players[0]}\n"
             
         else :
-            if Launch_turn(1) == True:
+            if launch_turn(1) == True:
                 time.sleep(1)
                 return f"{players[1]} Joueur 1 gagne !! Félicitations !!!\
  {players[1]}\n"
     
     # lorsque les tours sont écoulés, la boucle devient obsolète et la
     # fonction return sans ajouter de score
-    Display_board()
-    MATCH[0] +=1
+    display_board()
+    match[0] +=1
     return f"\nDommage, il faudra rejouer pour trouver un vainqueur !\n"

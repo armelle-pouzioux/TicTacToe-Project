@@ -1,8 +1,10 @@
 
-def Choose_symbol(player):
-    # définit avec un input le choix de symbole réalisé par le joueur puis
-    # supprime celui-ci de la liste disponible
-    from Fichier_Lists import symbol, players
+def choose_symbol(player):
+    # prints symbol list with a set of numbers dedicated to receive the
+    # player's input, therefore modifying their space in the players list
+    # according to their choice, before erasing it from the symbol list
+    # to avoid same choice scenarios
+    from lists_established import symbol, players
     import time
     print(symbol)
     for x in range(1, symbol.index(symbol[-1])+2):
@@ -26,25 +28,24 @@ def Choose_symbol(player):
             print("Insérez un nombre compris dans la sélection : ")
             continue
 
-def Reset_board():
-    # réinitialise la grille de jeu afin de permettre à une nouvelle manche de
-    # prendre place
-    from Fichier_Lists import board
+def reset_board():
+    # reset the board list to spaces not to create conflict between matches
+    from lists_established import board
     board[0:9] = [' ' for coordinates in range(1,10)]
 
-def Display_board():
-    # imprimer un board de jeu où sont inscrites les coordonnées de jeu qui
-    # seront remplacées par les symboles joués
-    from Fichier_Lists import board
+def display_board():
+    # print said gameboard with updated board list to keep players aware of
+    # their in-game moves
+    from lists_established import board
     print(f"\n| {board[0]} | {board[1]} | {board[2]} |          | 1 | 2 | 3 |")
     print(("+" + "-"*3)*3 + "+" + " "*10 + ("+" + "-"*3)*3 + "+")
     print(f"| {board[3]} | {board[4]} | {board[5]} |          | 4 | 5 | 6 |")
     print(("+" + "-"*3)*3 + "+" + " "*10 + ("+" + "-"*3)*3 + "+")
     print(f"| {board[6]} | {board[7]} | {board[8]} |          | 7 | 8 | 9 |\n")
 
-def Display_rules(y_n):
-    # affiche ou non les règles du jeu, l'assignation des symboles et le
-    # système de manches
+def display_rules(y_n):
+    # receive and reads the player's input about weither printing the rules
+    # of the game or jump right into it
     import time
     if y_n in ('o', 'oui', 'O', 'Oui', 'y', 'yes', 'Y', 'Yes'):
         print("\nChaque joueur choisi son symbole pour la partie.\n")
@@ -54,7 +55,7 @@ grille de jeu.\nLe premier à aligner ses trois symboles horizontalement, \
 verticalement,\nou diagonalement, gagne la partie. Si aucun joueur n'aligne \
 ses symboles,\nc'est match nul et nous t'invitons à rejouer !\n")
         time.sleep(7)
-        Display_board()
+        display_board()
         print("\nVoici la grille de jeu et sa décomposition.\n")
         time.sleep(3)
         return
@@ -63,7 +64,7 @@ ses symboles,\nc'est match nul et nous t'invitons à rejouer !\n")
         time.sleep(1.5)
         return
 
-def Display_scores():
-    from Fichier_Lists import SCORES, MATCH, players
-    return f"MATCH {MATCH[0]} : \
-{SCORES[0]} {players[0]} - {SCORES[1]} {players[1]}"
+def display_scores():
+    from lists_established import scores, match, players
+    return f"MATCH {match[0]} : \
+{scores[0]} {players[0]} - {scores[1]} {players[1]}"
