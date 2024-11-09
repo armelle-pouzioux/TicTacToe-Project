@@ -10,8 +10,8 @@ players = ['','']
     #cette liste permet de référer à l'un ou l'autre signe représentant le
     # joueur 1 ou 2 ([O:1])
 
-SCORES = [0,0]
-MATCH = [1]
-TURN = [1]
+scores = [0,0]
+match = [1]
+turn = [1]
 # ces listes à la valeur unique gèrent les comptes nécessaires aux fonctions
 # propres au jeu
