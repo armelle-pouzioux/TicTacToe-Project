@@ -1,19 +1,17 @@
 #
-# FICHIER_MAIN : compile l'intégralité des algorythmes composant le jeu,
-#               permettant le compte des manches, du score, etc.
+# MAIN.PY : compiles every functions and lists to create a functional
+#           game of TicTacToe
 
-# Préambule 1 : import de la fonction permettant l'affichage des règles au
-#               choix du joueur
+# Pre-match 1 : importing of the first function to display the rules of the
+#               game based on the players' choice
 from functions_display import display_rules
 import time
 time.sleep(1)
-display_rules(input("\nBienvenue au tic-tac-toe ! Voulez-vous visualiser les\
- règles avant de commencer ?\n  (affichage de la grille des coordonnées)\
- o/n :\n   "))
+display_rules()
 
-# Préambule 2 : import de la fonction faisant choisir aux joueurs les symboles
-#               avec lesquels ils souhaitent jouer
-from functions_display import choose_symbol
+# Pre-match 2 : importing of the function letting players choose which symbol
+#               they wish to play with
+from functions_choose import choose_symbol
 print(f"Les joueurs choisissent d'abord les symboles qui les représenteront\
  pendant la partie,\nces symboles sont résumés dans cette liste :\n")
 choose_symbol(0)
@@ -21,34 +19,26 @@ print("\nLe deuxième joueur choisit également son symbole :\n")
 time.sleep(2)
 choose_symbol(1)
 
-# Préambule 3 : import de la liste players['0','1'] recençant les symboles
-#               choisis afin de les placer sur la grille de jeu
-from lists_established import players
-print("\nLe joueur 1 jouera donc avec le symbole :", players[0],\
-"et le joueur 2 :", players[1])
-time.sleep(3)
 
-
-# Début des manches ! : import de la fonction des matchs dans une boucle
-#      infinie permettant de relancer la fonction en gardant un compte des
-#      scores pour chaque joueur, et sans répéter le préambule
+# Matches start ! : importing the function returning a playable match loop
+#                   which lets players choose weither they want to play again
 from functions_launch import launch_match
 from functions_display import display_scores
 while True:
     print(f"\n  Début du {display_scores()}\n")
     print(launch_match())
 
-    # Interstice 1 : condition permettant de réinitialiser la boucle et donc
-    #              une nouvelle partie grâce à la commande continue
+    # Half-time 1 : condition with an input to ask players weither to play
+    #               again or not, followed with message responses
     time.sleep(2.5)
     replay = input("Souhaitez-vous rejouer ? o/n :\n   ")
     if replay in ("o","O","oui","Oui","y","Y","yes","Yes"):
         continue
 
-    # Interstice 2 : en cas de fin de partie, la commande break brise la
-    #              boucle et met fin au code, affichant les scores finaux
+    # Half-time 2 : if the players don't play again, a message showing the
+    #               final scores is printed along with the break command
     else:
-        print(f"\nMerci d'avoir joué, à bientôt !\
-\n\nScores finaux, {display_scores()}\n")
+        print(f"\nMerci d'avoir joué, à bientôt !\n\n\
+Scores finaux, {display_scores()}\n")
         time.sleep(3)
         break

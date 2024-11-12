@@ -1,17 +1,17 @@
-symbol = ['x','o','&','#','★','♥']
-    #cette liste établit les différents symboles pouvant être utilisés pour
-    # représenter le jeu de chaque joueur
+symbols = ['x','o','&','#','★','♥']
+    # this list states all available symbols that can be used by players
+    # during the games
 
-board = [' ' for coordinates in range(1,10)]
-    #cette liste à répéter à chaque début de manche définit / réinitialise la
-    # grille, générant 9 "coordinates" vierges
+board = [' ' for coordinate in range(1,10)]
+    # this list simply generates 9 blank spaces destined to be switched to
+    # what players play during matches
 
-players = ['','']
-    #cette liste permet de référer à l'un ou l'autre signe représentant le
-    # joueur 1 ou 2 ([O:1])
+players = [' ',' ']
+    # this list shows 2 blank spaces that will be switched to what symbol
+    # each player choose to play with
 
 scores = [0,0]
 match = [1]
 turn = [1]
-# ces listes à la valeur unique gèrent les comptes nécessaires aux fonctions
-# propres au jeu
+# these lists made to be counts makes it possible to keep track of basic
+# informations between matches
