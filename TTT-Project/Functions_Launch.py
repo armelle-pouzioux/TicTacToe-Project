@@ -16,7 +16,7 @@ def launch_turn(player):
 
 def launch_match():
     # regroup all match-related functions to create a functionning round
-    # with inputs, formatted prints 
+    # with inputs and formatted prints 
     from functions_display import reset_board, display_board
     from lists_established import players, match, turn
     import time
@@ -29,7 +29,7 @@ def launch_match():
         turn[0] +=1
         display_board()
         time.sleep(0.5)
-        if turn[0] %2!= 0:
+        if turn[0] %2== 0:
             if launch_turn(0) == True:
                 time.sleep(1)
                 return f"{players[0]} Joueur 1 gagne !! Félicitations !!!\
@@ -41,8 +41,8 @@ def launch_match():
                 return f"{players[1]} Joueur 1 gagne !! Félicitations !!!\
  {players[1]}\n"
     
-    # lorsque les tours sont écoulés, la boucle devient obsolète et la
-    # fonction return sans ajouter de score
+    # when 9 turns have ecluded, the while loop become obsolete and the
+    # function returns without changing scores
     display_board()
     match[0] +=1
     return f"\nDommage, il faudra rejouer pour trouver un vainqueur !\n"
