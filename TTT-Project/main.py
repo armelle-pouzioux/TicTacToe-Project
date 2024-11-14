@@ -24,7 +24,6 @@ while True:
     #               again or not, followed with message responses
     time.sleep(2) ; replay = input("Souhaitez-vous rejouer ? o/n :\n   ")
     if replay in ("o","O","oui","Oui","y","Y","yes","Yes"): continue
-
     # Half-time 2 : if the players don't play again, a message showing the
     #               final scores is printed along with the break command
     else: print(f"\nMerci d'avoir joué, à bientôt !\n\nScores finaux,\

@@ -4,7 +4,6 @@ def launch_choice(current):
     from settings import symbols, players; import time; print(symbols);
     for x in range(1, symbols.index(symbols[-1])+2):
         print("   ", end=''); print(x, ",", sep='', end='')
-
     while True:
         choice = input(f"\n\nJoueur {current+1}, faites votre choix avec\
  le numéro correspondant : ")
@@ -23,7 +22,6 @@ def launch_match():
     # with inputs and formatted prints 
     import functions_display, functions_verify, settings; import time
     functions_display.reset_board()
-
     for turn in range(0,9):
         time.sleep(1); print(f"{' '*10} MATCH {settings.match}, Tour {turn+1}")
         functions_display.display_board() ; time.sleep(0.5)
@@ -34,8 +32,6 @@ def launch_match():
                 time.sleep(1); functions_display.display_board
                 return f"{settings.players[current]}\
  Joueur {current+1} gagne !! Félicitations !!! {settings.players[current]}\n"
-    
-    # when 9 turns have ecluded, the loop becomes obsolete and the function
-    # returns without changing scores
+    # when 9 turns have ecluded, the function returns without changing scores
     functions_display.display_board(); settings.match +=1
     return f"\nDommage, il faudra rejouer pour trouver un vainqueur !\n"
