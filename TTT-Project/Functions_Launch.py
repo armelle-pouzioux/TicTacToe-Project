@@ -1,4 +1,3 @@
-
 def launch_choice(current):
     # prints symbol list with a set of numbers dedicated to receive the
     # player's input, therefore modifying their space in the players list

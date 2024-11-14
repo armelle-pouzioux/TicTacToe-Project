@@ -44,4 +44,3 @@ def verify_win(player):
     elif all(players[player] in board[coordinate] for coordinate in (2,4,6))\
      or all(players[player] in board[coordinate] for coordinate in (0,4,8)):
         return True
-

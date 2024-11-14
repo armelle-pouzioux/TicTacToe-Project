@@ -1,4 +1,3 @@
-#
 # MAIN.PY : compiles every functions and lists to create a functional
 #           game of TicTacToe
 

@@ -1,4 +1,3 @@
-
 def reset_board():
     # reset the board list to spaces not to create conflict between matches
     from settings import board
