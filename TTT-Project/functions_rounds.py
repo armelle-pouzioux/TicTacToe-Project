@@ -2,7 +2,7 @@ def TRY_coor(player):
     #try si l'input de coordonnée correspond à une case vide, au quel cas le
     # tour se termine en remplaçant dans la liste board l'élément à la
     # coordonnée choisie par le symbole du joueur 1 ou 2 ([0:1])
-    from Lists_Board_Players_MATCH import board, players
+    from lists import board, players
     while True:
         coordinates = input(f"{players[player]}  Quelle case souhaitez-vous jouer ? (1 à 9)\n  ")
         try:
@@ -31,7 +31,7 @@ def TRY_coor(player):
 def TRY_win(player):
     #vérifier si le dernier placement de symbole permet de compléter une
     # combinaison victorieuse pour le joueur
-    from Lists_Board_Players_MATCH import board, players
+    from lists import board, players
     
     if all(players[player] in board[x] for x in (0,3,6)) or all(players[player] in board[x]\
      for x in (1,4,7)) or all(players[player] in board[x] for x in (2,5,8)):
@@ -47,20 +47,20 @@ def TRY_win(player):
     else:
         return False
 
-def Launch_match():
+def launch_match():
     #cette fonction constitue la boucle de jeu enchaînant les tours des deux
     # joueurs jusqu'à atteindre soit une victoire soit un match nul
-    from Functions_board import Reset_board, Display_board
-    from Lists_Board_Players_MATCH import players, MATCH, SCORES
+    from functions_board import reset_board, display_board
+    from lists import players, MATCH, SCORES
     TURN = 0
       #cette variable compte le nombre de tours écoulés depuis le début de la
       # manche, permettant d'arrêter celle-ci lorsque les 9 tours sont écoulés
 
-    Reset_board()
+    reset_board()
     while TURN <=9 :
         TURN +=1
         print(f"           MATCH {MATCH[0]}, Tour {TURN}")
-        Display_board()
+        display_board()
 
         if TURN %2!= 0:
             TRY_coor(0)
