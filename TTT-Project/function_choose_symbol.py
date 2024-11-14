@@ -2,7 +2,7 @@ symbol = ['x','o','&','#','★','♥']
     #cette liste établit les différents symboles pouvant être utilisés pour
     # représenter le jeu de chaque joueur
 
-def Choose_symbol(player):
+def choose_symbol(player):
     #définit avec un input le choix de symbole réalisé par le joueur puis
     # supprime celui-ci de la liste disponible
     print(symbol)
