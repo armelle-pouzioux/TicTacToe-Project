@@ -1,38 +1,32 @@
 def verify_coordinate(player):
     # tries the players' inputs until it stands as an integer, making it
     # comparable with the board's coordinate (from 1 to 9)
-    from lists_established import board, players
+    from settings import board, players
     while True:
         coordinate = input(f"Joueur {players[player]},\
  quelle case souhaitez-vous jouer ? (1 à 9)\n  ")
 
-        try:
-            coordinate = int(coordinate)
-        except ValueError:
-            print("Inscrivez le nombre entier correspondant à la case : ")
-            continue
+        try: coordinate = int(coordinate)
+        except ValueError: print("Inscrivez le nombre entier\
+ correspondant à la case : "); continue
 
         if coordinate < 0 or coordinate > 10:
-            print("Inscrivez une valeur entre 1 et 9 : ")
-            continue
+            print("Inscrivez une valeur entre 1 et 9 : "); continue
 
         elif board[coordinate-1] != ' ':
-            print("Cette case est déjà occupée ! ")
-            continue
+            print("Cette case est déjà occupée ! "); continue
 
         elif (coordinate-1) in range(0, 9) and board[coordinate-1] == ' ':
-            board[coordinate-1] = players[player]
-            return True
+            board[coordinate-1] = players[player]; return True
         
-        else :
-            print("Erreur inconnue, réessayer : ")
-            continue
+        # fail-safe when all conditions are false, which shouldn't happen
+        else: print("Erreur inconnue, réessayer : "); continue
         
 
-def verify_win_cases(player):
+def verify_win(player):
     # verifies if the board list has any combination of 3 coordinates
     # corresponding to the player's symbol with its parameter to return true
-    from lists_established import board, players
+    from settings import board, players
     
     # columns combinations
     if all(players[player] in board[coordinate] for coordinate in (0,3,6))\
@@ -50,5 +44,4 @@ def verify_win_cases(player):
     elif all(players[player] in board[coordinate] for coordinate in (2,4,6))\
      or all(players[player] in board[coordinate] for coordinate in (0,4,8)):
         return True
-    else:
-        return False
+
