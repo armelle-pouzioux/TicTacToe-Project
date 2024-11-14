@@ -11,7 +11,5 @@ players = [' ',' ']
     # each player choose to play with
 
 scores = [0,0]
-match = [1]
-turn = [1]
-# these lists made to be counts makes it possible to keep track of basic
-# informations between matches
+match = 1
+# these values represent counts made to keep track of basic informations

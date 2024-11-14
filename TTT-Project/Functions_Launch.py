@@ -1,48 +1,42 @@
 
-def launch_turn(player):
-    # launches the verifying of current player's coordinate of choice
-    # to update the board list accurately then launches the verifying of
-    # all winning combinations
-    from lists_established import scores, match
-    from functions_display import display_board
-    from functions_verify import verify_coordinate, verify_win_cases
+def launch_choice(current):
+    # prints symbol list with a set of numbers dedicated to receive the
+    # player's input, therefore modifying their space in the players list
+    from settings import symbols, players; import time; print(symbols);
+    for x in range(1, symbols.index(symbols[-1])+2):
+        print("   ", end=''); print(x, ",", sep='', end='')
 
-    verify_coordinate(player)
-    if verify_win_cases(player) == True:
-        display_board()
-        scores[player] +=1
-        match[0] +=1
-        return True
+    while True:
+        choice = input(f"\n\nJoueur {current+1}, faites votre choix avec\
+ le numéro correspondant : ")
+        try: choice = int(choice)
+        except ValueError: print("Insérez un nombre entier désignant \
+le symbole choisi : "); continue
+        if 0 <= choice-1 <= symbols.index(symbols[-1]):
+            players[current] = symbols.pop(choice-1)
+            print(f"\nJoueur {current+1}, votre symbole sera {players[current]}")
+            time.sleep(1); return
+        else: print("Insérez un nombre compris dans la sélection : "); continue
+
 
 def launch_match():
     # regroup all match-related functions to create a functionning round
     # with inputs and formatted prints 
-    from functions_display import reset_board, display_board
-    from lists_established import players, match, turn
-    import time
+    import functions_display, functions_verify, settings; import time
+    functions_display.reset_board()
 
-    reset_board()
-    turn[0] = 1
-    while turn[0] <=9 :
-        time.sleep(1)
-        print(f"{' '*10} MATCH {match[0]}, Tour {turn[0]}")
-        turn[0] +=1
-        display_board()
-        time.sleep(0.5)
-        if turn[0] %2== 0:
-            if launch_turn(0) == True:
-                time.sleep(1)
-                return f"{players[0]} Joueur 1 gagne !! Félicitations !!!\
- {players[0]}\n"
-            
-        else :
-            if launch_turn(1) == True:
-                time.sleep(1)
-                return f"{players[1]} Joueur 1 gagne !! Félicitations !!!\
- {players[1]}\n"
+    for turn in range(0,9):
+        time.sleep(1); print(f"{' '*10} MATCH {settings.match}, Tour {turn+1}")
+        functions_display.display_board() ; time.sleep(0.5)
+        current = turn %2
+        functions_verify.verify_coordinate(current)
+        if functions_verify.verify_win(current) == True:
+                settings.scores[current] +=1 ; settings.match +=1
+                time.sleep(1); functions_display.display_board
+                return f"{settings.players[current]}\
+ Joueur {current+1} gagne !! Félicitations !!! {settings.players[current]}\n"
     
-    # when 9 turns have ecluded, the while loop become obsolete and the
-    # function returns without changing scores
-    display_board()
-    match[0] +=1
+    # when 9 turns have ecluded, the loop becomes obsolete and the function
+    # returns without changing scores
+    functions_display.display_board(); settings.match +=1
     return f"\nDommage, il faudra rejouer pour trouver un vainqueur !\n"
