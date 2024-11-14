@@ -65,7 +65,7 @@ def launch_match():
         if TURN %2!= 0:
             TRY_coor(0)
             if TRY_win(0) == True:
-                Display_board
+                display_board()
                 SCORES[0] +=1
                 MATCH[0] +=1
                 if TURN <=7:
@@ -75,7 +75,7 @@ def launch_match():
         else :
             TRY_coor(1)
             if TRY_win(1) == True:
-                Display_board
+                display_board()
                 SCORES[1] +=1
                 MATCH[0] +=1
                 if TURN <=7:
