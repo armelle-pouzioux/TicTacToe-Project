@@ -13,7 +13,7 @@ print("\nLe deuxième joueur choisit également son symbole conformément à la\
  liste\n")
 choose_symbol(1)
 
-from Lists_Board_Players_MATCH import players
+from lists import players
 print("Le joueur 1 jouera donc avec le symbole :", players[0],\
  "et le joueur 2 :", players[1])
 

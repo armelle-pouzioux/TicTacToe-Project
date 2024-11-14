@@ -17,7 +17,7 @@ def choose_symbol(player):
             print("Insérez un nombre entier désignant le symbole choisi : ")
             continue
         if 0 <= choice-1 <= symbol.index(symbol[-1]):
-            from Lists_Board_Players_MATCH import players
+            from lists import players
             players[player] = symbol.pop(choice-1)
             return
         else: 
