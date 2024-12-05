@@ -16,3 +16,9 @@ de trois, alors c’est un match nul.
 - 🕹️**Gestion de l’interaction avec l'utilisateur** : Mise en place d’une interface en ligne de commande pour que deux joueurs puissent interagir avec le jeu.
 - 🔣**Logique de jeu** : Implémentation de l'algorithme permettant de vérifier les conditions de victoire (alignement horizontal, vertical, ou diagonal) et de gérer les matchs nuls.
 - 📊**Utilisation de structures de données** : Travail avec des listes (tableaux) pour représenter le plateau de jeu et manipuler les cases du jeu.
+
+---
+Participation :
+- [*Jolyne Mangeot*](https://github.com/joseph-mangeot)
+- [*Vladimir Gorbachev*](https://github.com/vladimir-gorbachev)
+- [*Armelle Pouzioux*](https://github.com/armelle-pouzioux)
