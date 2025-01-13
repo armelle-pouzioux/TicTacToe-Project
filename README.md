@@ -19,6 +19,6 @@ de trois, alors c’est un match nul.
 
 ---
 Participation :
-- [*Jolyne Mangeot*](https://github.com/joseph-mangeot)
+- [*Jolyne Mangeot*](https://github.com/jolyne-mangeot)
 - [*Vladimir Gorbachev*](https://github.com/vladimir-gorbachev)
 - [*Armelle Pouzioux*](https://github.com/armelle-pouzioux)
